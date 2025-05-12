@@ -55,7 +55,7 @@ public class dopsnew {
         countrySearch.click();
         $(byText("Россия")).click();
 
-
+//norm
 
 
         //WebElement stranaPoezdki = wait.until(ExpectedConditions.elementToBeClickable(ByText"Страна поездки")));
@@ -118,8 +118,6 @@ System.out.println("Авторизация выполнена");
 
 
 
-
-        // Ждём, пока появятся карточки
         ElementsCollection cards_of_vidacha = $$("div.excursion-card__content").shouldHave(CollectionCondition.sizeGreaterThan(1));  // Ждём, пока появятся карточки
         cards_of_vidacha.get(1).$("button").click();  // Кликаем на кнопку внутри второй карточки
 
