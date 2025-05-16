@@ -86,9 +86,10 @@ public class dopsnew {
         Configuration.browser = "chrome"; // <--- важно
         Configuration.pageLoadStrategy = "none"; // или "none", если хочешь ускорить
         Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "medium";
-
+        Configuration.browserSize = "normal";
+        sleep(3000);
         Selenide.open("https://fstravel.com/searchexcursions");
+
         $("[class=v-icon-user-14]").click(); // Открываем попап Лк
         $("[type=email]").setValue("testfspavelclient@yandex.ru"); // Вводим логин
         $("[type=password]").setValue("Abonent13!");$("[type=submit]").click();  // Вводим пароль
@@ -120,6 +121,18 @@ System.out.println("Авторизация выполнена");
 
         ElementsCollection cards_of_vidacha = $$("div.excursion-card__content").shouldHave(CollectionCondition.sizeGreaterThan(1));  // Ждём, пока появятся карточки
         cards_of_vidacha.get(1).$("button").click();  // Кликаем на кнопку внутри второй карточки
+      //  $(byText("Выбор")).click();
+
+
+        $("[data-v-26c18107].calendar__field-dates").click();  // разобрать команду
+        $$("[data-v-26c18107].calendar-popup__text").findBy(Condition.text("13")).click();
+      // $("button[class=excursion-modal-main__buttons-btn]").shouldBe(Condition.visible).click();
+       sleep(2000);
+     //   $("button[class=excursion-modal-main__buttons-btn]").shouldBe(Condition.visible).click();
+
+        //  $(byText("Выбрать")).shouldBe(Condition.visible).click();
+       // $("")
+
 
 
         //  $("(//div[contains(@class,'excursion-card__content')])[1] //button").shouldBe(Condition.visible).click();
